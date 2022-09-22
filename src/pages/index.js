@@ -27,8 +27,8 @@ export default function Home() {
   };
 
   useEffect(() => {
-console.log(apiData)
-  }, [apiData])
+    console.log(apiData);
+  }, [apiData]);
 
   return (
     <>

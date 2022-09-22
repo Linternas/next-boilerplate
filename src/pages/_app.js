@@ -1,8 +1,8 @@
-import '../styles/globals.css';
+import 'src/styles/globals.css';
 import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from 'react-query';
 import { queryClient } from 'src/components/react-query';
 
-import wrapper from '../src/redux';
+import wrapper from '../redux';
 
 function MyApp({ Component, pageProps }) {
   return (
