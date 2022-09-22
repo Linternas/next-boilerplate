@@ -23,7 +23,7 @@ const makeStore = () => {
 
     const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-    const store = createStore(persistedReducer, {}, bindMiddleware([sagaMiddleware]));
+    const store = createStore(persistedReducer, {});
 
     let persistor = persistStore(store);
 
@@ -31,7 +31,7 @@ const makeStore = () => {
   }
 };
 
-const wrapper = createWrapper();
+const wrapper = createWrapper(makeStore);
 export const store = makeStore();
 
 export default wrapper;
