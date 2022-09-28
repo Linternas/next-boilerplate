@@ -1,15 +1,23 @@
-import 'src/styles/globals.css';
 import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
 import { queryClient } from 'src/components/react-query';
 
 import wrapper from '../redux';
 
+// import '../styles/index.scss';
+
+import '../styles/reset.scss';
+
 function MyApp({ Component, pageProps }) {
+  const { store, props } = wrapper.useWrappedStore(pageProps);
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
+    </Provider>
   );
 }
 
-export default wrapper.withRedux(MyApp);
+export default MyApp;

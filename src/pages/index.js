@@ -5,6 +5,9 @@ import API from 'src/api';
 
 import { counterAdd, counterMinus } from 'src/redux/modules/counter';
 
+import { CounterButton } from 'src/components/styled/CounterButton.styled';
+import { CounterText } from 'src/components/styled/CounterText.styled';
+
 export default function Home() {
   const dispatch = useDispatch();
 
@@ -33,12 +36,11 @@ export default function Home() {
   return (
     <>
       <div>
-        <p>{data}</p>
+        <CounterText>{data}</CounterText>
 
-        <button onClick={handleClickAddCount}>+</button>
-        <button onClick={handleClickMinusCount}>-</button>
+        <CounterButton onClick={handleClickAddCount}>+</CounterButton>
+        <CounterButton onClick={handleClickMinusCount}>-</CounterButton>
       </div>
-      <div></div>
     </>
   );
 }

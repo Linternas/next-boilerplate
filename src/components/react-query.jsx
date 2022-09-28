@@ -1,6 +1,18 @@
 import { MutationCache, QueryCache, QueryClient } from 'react-query';
 
 export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 0,
+      retryOnMount: false,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      useErrorBoundary: true
+    },
+    mutations: {
+      useErrorBoundary: true
+    }
+  },
   queryCache: new QueryCache({
     onError: (error, query) => {
       apiErrorHandler(error);
