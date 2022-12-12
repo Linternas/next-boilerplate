@@ -4,9 +4,7 @@ import { queryClient } from 'src/components/react-query';
 
 import wrapper from '../redux';
 
-// import '../styles/index.scss';
-
-import '../styles/reset.scss';
+import 'assets/scss/reset.scss';
 
 function MyApp({ Component, pageProps }) {
   const { store, props } = wrapper.useWrappedStore(pageProps);
