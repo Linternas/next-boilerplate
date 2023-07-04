@@ -6,6 +6,9 @@ const nextConfig = {
   noImplicitAny: true,
   noImplicitThis: true,
   strictNullChecks: true,
-}
+  experimental: {
+    appDir: true
+  }
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
