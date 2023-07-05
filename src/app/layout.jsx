@@ -2,7 +2,7 @@ import ReactQueryProvider from '../components/react-query';
 
 import LayoutWrapper from '../components/layoutWrapper';
 
-import '../assets/styles/main.scss';
+import './assets/styles/main.scss';
 
 import { Providers } from 'src/redux/provider';
 
